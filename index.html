@@ -20,7 +20,7 @@
         <a class="logo" href="./index.html">Web<span style="color: #000000">Studio</span></a>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a class="nav-link" href="#">Agencja</a></li>
+            <li><a class="nav-link nav-active" href="#">Agencja</a></li>
             <li><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
             <li><a class="nav-link" href="#">Kontakt</a></li>
           </ul>
@@ -47,7 +47,7 @@
       <section class="hero">
         <div class="hero-container">
           <h1 class="hero-header">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-          <button class="hero-button">Zamów usługe</button>
+          <button data-modal-open class="hero-button">Zamów usługe</button>
         </div>
       </section>
       <!-- article -->
@@ -118,18 +118,17 @@
         <div class="services-container">
           <h2 class="services-header">Czym się zajmujemy</h2>
           <ul class="services-list">
-            <li>
-              <img class="img-services" src="images/services/programming.jpg" alt="programming" />
+            <li class="img-services">
+              <img src="images/services/programming.jpg" alt="programming" />
+              <div class="service-text">APLIKACJE KOMPUTEROWE</div>
             </li>
-            <li>
-              <img
-                class="img-services"
-                src="images/services/website-on-smartphone.jpg"
-                alt="website on smartphone"
-              />
+            <li class="img-services">
+              <img src="images/services/website-on-smartphone.jpg" alt="website on smartphone" />
+              <div class="service-text">APLIKACJE MOBILNE</div>
             </li>
-            <li>
-              <img class="img-services" src="images/services/design.jpg" alt="design" />
+            <li class="img-services">
+              <img src="images/services/design.jpg" alt="design" />
+              <div class="service-text">ROZWIĄZANIA GRAFICZNE</div>
             </li>
           </ul>
         </div>
@@ -381,5 +380,14 @@
         </div>
       </div>
     </footer>
+
+    <!--window-->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="close-button" data-modal-close>&times;</button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

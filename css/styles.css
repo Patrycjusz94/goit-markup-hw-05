@@ -19,6 +19,49 @@
 
 body {
   font-family: "roboto", sans-serif;
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  width: 528px;
+  height: 581px;
+  background-color: var(--color-white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  cursor: pointer;
 }
 
 .container {
@@ -89,6 +132,22 @@ body {
   color: var(--color-red);
 }
 
+.nav-active {
+  position: relative;
+  color: var(--color-purple);
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 43px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-purple);
+  border-radius: 2px;
+}
+
 .addres-list {
   margin-right: 15px;
   display: flex;
@@ -108,7 +167,7 @@ body {
 }
 
 .addres-link:hover {
-    color: var(--color-purple);
+  color: var(--color-purple);
 }
 
 .addres-link:active {
@@ -233,6 +292,22 @@ body {
   gap: 30px;
 }
 
+.service-text {
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  line-height: 1.1428;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+}
+
 .team {
   background: #f5f4fa;
   height: 708px;
@@ -325,6 +400,7 @@ body {
 .img-project {
   width: 370px;
   height: 294px;
+  position: relative;
 }
 
 .img-team {
@@ -383,16 +459,43 @@ button[type="button"]:focus {
   border: 1px solid #eeeeee;
 }
 
+.project-text {
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 294px;
+  transform: translateY(110%);
+  transition: transform 250ms ease;
+  padding-left: 24px;
+  padding-top: 49px;
+  padding-right: 45px;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+}
+
+.project-animation {
+  position: relative;
+  overflow: hidden;
+}
+
 .project-figure:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-figure:hover .project-text {
+  transform: translateY(0);
 }
 
 .project-figure-header {
   padding-left: 24px;
   font-weight: 700;
   font-size: 1.125rem;
-  line-height: 2;
+  line-height: 2.25;
   letter-spacing: 0.06em;
   color: #212121;
   margin-top: 20px;
@@ -406,7 +509,7 @@ button[type="button"]:focus {
   letter-spacing: 0.03em;
   color: var(--color-gray);
   margin-top: 0px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .client-container {
