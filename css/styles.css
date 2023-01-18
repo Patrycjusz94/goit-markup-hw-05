@@ -27,8 +27,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition-property: transform;
-  transition-duration: 1s;
   transition-timing-function: ease;
   width: 528px;
   height: 581px;
@@ -50,6 +48,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.6s;
 }
 
 .close-button {
@@ -99,7 +98,7 @@ body {
 }
 
 .nav-list,
-.addres-link {
+.address-link {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.1428;
@@ -122,6 +121,7 @@ body {
 .nav-link {
   display: flex;
   color: var(--color-black);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover {
@@ -148,7 +148,7 @@ body {
   border-radius: 2px;
 }
 
-.addres-list {
+.address-list {
   margin-right: 15px;
   display: flex;
   flex-direction: row;
@@ -156,21 +156,22 @@ body {
   fill: var(--color-gray);
 }
 
-.addres-link {
+.address-link {
   display: flex;
   gap: 10px;
   color: var(--color-gray);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.addres:hover {
+.address:hover {
   fill: var(--color-purple);
 }
 
-.addres-link:hover {
+.address-link:hover {
   color: var(--color-purple);
 }
 
-.addres-link:active {
+.address-link:active {
   color: var(--color-red);
 }
 
@@ -213,12 +214,20 @@ body {
   letter-spacing: 0.06em;
   border: none;
   color: var(--color-white);
-  background: var(--color-purple);
+  background-color: var(--color-purple);
   box-shadow: 0px 4px 4px #00000026;
   border-radius: 4px;
   width: 200px;
   height: 50px;
   cursor: pointer;
+  transition-property: transform, color, background-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover {
+  transform: scale(1.1);
+  color: var(--color-purple);
+  background-color: var(--color-white);
 }
 
 .article-list {
@@ -383,6 +392,7 @@ body {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icon {
@@ -424,6 +434,7 @@ button[type="button"] {
   background: #f5f4fa;
   border-radius: 4px;
   border: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button[type="button"]:hover {
@@ -457,6 +468,7 @@ button[type="button"]:focus {
   height: 404px;
   background: var(--color-white);
   border: 1px solid #eeeeee;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-text {
@@ -547,6 +559,7 @@ button[type="button"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rectangle:hover {
@@ -611,6 +624,7 @@ button[type="button"]:focus {
   justify-content: center;
   align-items: center;
   background-color: #ffffff1a;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-back-icon:hover {
@@ -628,9 +642,10 @@ button[type="button"]:focus {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.addres-street {
+.address-street {
   font-style: normal;
   color: var(--color-white);
 }
